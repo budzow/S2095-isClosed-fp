@@ -8,7 +8,7 @@ public class DatabaseExample {
         Connection connection = null;
         
         try {
-			connection = DriverManager.getConnection("jdbc:your_database_url");
+			connection = DriverManager.getConnection("jdbc:your_database_url"); //java:S2095 raises an fp when !connection.isClosed() is used on line 14
             
         } finally {
 			if (connection != null && !connection.isClosed()) {
